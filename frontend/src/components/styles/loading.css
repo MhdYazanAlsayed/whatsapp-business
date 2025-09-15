@@ -1,0 +1,46 @@
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: wait;
+  z-index: 100000;
+  transition: 0.3s;
+  opacity: 0;
+}
+.loading[data-status="run"] {
+  visibility: visible;
+  opacity: 1;
+}
+.loading[data-status="stop"] {
+  opacity: 0;
+  visibility: hidden;
+}
+.loading .loading-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.loading .loading-bar {
+  position: absolute;
+  left: -20%;
+  top: 0;
+  width: 20%;
+  height: 3px;
+  border-radius: 15px;
+  background-color: var(--red);
+  animation: loading 1.6s ease infinite forwards;
+}
+
+@keyframes loading {
+  0% {
+    left: -20%;
+  }
+  100% {
+    left: 100%;
+  }
+}

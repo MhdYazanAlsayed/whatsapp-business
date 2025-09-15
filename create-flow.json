@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "content": "أهلا بك في مجموعة تداوي الطبية كيف يمكنني المساعدة ؟",
+      "action": 0,
+      "eventType": 2,
+      "type": 3,
+      "listButtonDisplayText": "القائمة",
+      "listItems": [
+        {
+          "target": 2,
+          "content": "حجز موعد"
+        },
+        {
+          "target": 5,
+          "content": "عروضنا"
+        },
+        {
+          "target": 6,
+          "content": "مواقعنا"
+        },
+        {
+          "target": 7,
+          "content": "التقارير المرضية"
+        },
+        {
+          "target": 7,
+          "content": "الشكاوى والمقترحات"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "content": "الرجاء اختيار التخصص المطلوب من القائمة .",
+      "action": 0,
+      "type": 3,
+      "eventType": 0,
+      "listButtonDisplayText": "القائمة",
+      "listItems": [
+        { "target": 3, "content": "طب الاسنان" },
+        { "target": 3, "content": "الجلدية وتجميل الليزر" },
+        { "target": 3, "content": "طب وجراحة العيون" },
+        { "target": 3, "content": "العقم واطفال الانابيب" },
+        { "target": 3, "content": "المخ والاعصاب والعظام" },
+        { "target": 3, "content": "العيادات التخصصية" }
+      ]
+    },
+    {
+      "id": 3,
+      "content": "الرجاء اختيار الفرع المراد الحجز فيه .",
+      "action": 0,
+      "type": 3,
+      "eventType": 0,
+      "listButtonDisplayText": "الأفرع",
+      "listItems": [
+        {
+          "target": 4,
+          "content": "مستشفى تداوي"
+        },
+        {
+          "target": 4,
+          "content": "فرع ابها"
+        },
+        {
+          "target": 4,
+          "content": "خميس مشيط \\ الموسى"
+        },
+        {
+          "target": 4,
+          "content": "خميس مشيط \\ المصيف"
+        },
+        {
+          "target": 4,
+          "content": "فرع جازان"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "content": "سيتم تحويلك الى موظف خدمة العملاء لاستكمال الحجز , الرجاء الانتظار من فضلك .",
+      "action": 2,
+      "type": 0,
+      "eventType": 0
+    },
+    {
+      "id": 5,
+      "content": "قائمة العروض (تجريبي)",
+      "action": 0,
+      "type": 0,
+      "eventType": 0
+    },
+    {
+      "id": 6,
+      "content": "رابط حساب الفيس بوك : <تجريبي>\\n\\n\\nرابط حساب اكس : <تجريبي>\\n\\n\\nرابط قناة اليوتيوب : <تجريبي>\\n\\n\\nرابط قناة التيليغرام : <تجريبي>\\n\\n\\nالموقع الالكتروني : <تجريبي>\\n\\n\\n",
+      "action": 0,
+      "type": 0,
+      "eventType": 0
+    },
+    {
+      "id": 7,
+      "content": "قريبا .. ",
+      "action": 0,
+      "type": 0,
+      "eventType": 0
+    },
+    {
+      "id": 8,
+      "content": "اهلا بك في مجموعة تداوي الطبية , هل يمكنني ان ادعوك باسم {FULLNAME} ?",
+      "action": 0,
+      "type": 2,
+      "eventType": 1,
+      "buttons": [
+        {
+          "target": 1,
+          "displayText": "نعم"
+        },
+        {
+          "target": 9,
+          "displayText": "لا"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "content": "من فضلك قم بادخال اسم تود ان ادعوك به ..",
+      "action": 1,
+      "type": 0,
+      "eventType": 0
+    },
+    {
+      "id": 10,
+      "content": "مرحبا {FULLNAME} , طاب يومك !\nاهلا وسهلا بك في مجموعة تداوي الطبية , كيف يمكنني المساعدة ؟",
+      "action": 0,
+      "type": 0,
+      "eventType": 3
+    }
+  ]
+}

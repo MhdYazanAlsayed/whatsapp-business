@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\VISION\Documents\Projects\Sprint Star Company\Sprint Buisness\backend\SprintBusiness\SprintBusiness.Api\bin\Release\net8.0\publish\</_PublishTargetUrl>
+    <History>True|2025-05-10T16:03:55.5193891Z||;True|2025-05-07T20:11:48.7635540+03:00||;True|2025-05-07T19:33:47.3690515+03:00||;True|2025-05-07T19:25:55.6647196+03:00||;True|2025-05-07T19:14:41.0925713+03:00||;True|2025-05-07T17:52:57.6559242+03:00||;True|2025-05-07T17:43:38.1328006+03:00||;True|2025-05-07T17:24:48.5551755+03:00||;True|2025-05-07T17:24:37.8993180+03:00||;True|2025-05-07T16:14:50.9942545+03:00||;True|2025-05-07T16:09:08.3135321+03:00||;True|2025-05-07T15:25:42.7195194+03:00||;True|2025-05-07T14:18:17.2390288+03:00||;True|2025-01-05T03:31:07.1260614+03:00||;True|2025-01-05T03:23:10.4265687+03:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
