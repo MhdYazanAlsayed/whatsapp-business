@@ -1,7 +1,7 @@
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
 import ReplyTemplate from "src/app/core/entities/reply-templates/ReplyTemplate";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import CreateReplyTemplateCommand from "./CreateReplyTemplateCommand";
 
@@ -11,12 +11,12 @@ export default class CreateReplyTemplateCommandHandler
   private readonly _httpService: IHttp;
   private readonly _loadingService: ILoading;
 
-  constructor({ httpService, loadingService }: ServiceProvider) {
-    this._httpService = httpService;
-    this._loadingService = loadingService;
+  constructor(deps: Pick<ServiceProvider, "httpService" | "loadingService">) {
+    this._httpService = deps.httpService;
+    this._loadingService = deps.loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: CreateReplyTemplateCommand
   ): Promise<ReplyTemplate> {
     try {

@@ -1,7 +1,7 @@
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
 import ReplyTemplate from "src/app/core/entities/reply-templates/ReplyTemplate";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import UpdateReplyTemplateCommand from "./UpdateReplyTemplateCommand";
 
@@ -16,7 +16,7 @@ export default class UpdateReplyTemplateCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: UpdateReplyTemplateCommand
   ): Promise<ReplyTemplate> {
     try {

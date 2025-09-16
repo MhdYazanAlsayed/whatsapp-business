@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using SprintBuisness.Contracts.Authentication;
-using SprintBuisness.Contracts.Database.UnitOfWorks;
 using SprintBuisness.Contracts.Whatsapp;
 using SprintBuisness.EntityframeworkCore.Contexts;
 using SprintBusiness.Domain.Conversations.Keys;
@@ -11,17 +11,15 @@ namespace SprintBusiness.Features.Conversations.Commands.TakeConversation
 {
     public class TakeConversationCommandHandler : IRequestHandler<TakeConversationCommand, ResultDto>
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IAuthorization _authorization;
         private readonly IRealtime _realTime;
         private readonly ApplicationDbContext _context;
 
-        public TakeConversationCommandHandler(IUnitOfWork unitOfWork , 
+        public TakeConversationCommandHandler( 
             IAuthorization authorization ,
             IRealtime realTime,
             ApplicationDbContext context)
         {
-            _unitOfWork = unitOfWork;
             _authorization = authorization;
             _realTime = realTime;
             _context = context;
@@ -35,7 +33,7 @@ namespace SprintBusiness.Features.Conversations.Commands.TakeConversation
 
             try
             {
-                var conversation = await _unitOfWork.Conversations
+                var conversation = await _context.Conversations
                     .SingleAsync(x => x.Id == new ConversationId(request.ConversationId));
 
                 user.TakeConversation(conversation);

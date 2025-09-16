@@ -2,7 +2,7 @@
 
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import SendTemplateCommand from "./SendTemplateCommand";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import { ResultDto } from "src/app/core/helpers/ResultDto";
@@ -19,7 +19,7 @@ export default class SendTemplateCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(request: SendTemplateCommand): Promise<ResultDto<Message>> {
+  async handleAsync(request: SendTemplateCommand): Promise<ResultDto<Message>> {
     const url =
       "api/conversations/" +
       request.payload.conversationId.value +

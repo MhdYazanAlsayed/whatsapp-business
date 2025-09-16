@@ -1,4 +1,4 @@
-import FeatureList from "../core/helpers/mediatR/FeatureList";
+import FeatureList from "../core/helpers/app_helpers/types/FeatureList";
 import { AccountFeatures } from "./account/AccountFeatures";
 import { ConversationNoteFeatures } from "./conversation-notes/ConversationNoteFeatures";
 import { ConversationFeature } from "./conversation/ConversationFeatures";

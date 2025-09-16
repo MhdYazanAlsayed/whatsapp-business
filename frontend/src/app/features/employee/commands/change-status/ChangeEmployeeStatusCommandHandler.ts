@@ -1,4 +1,4 @@
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ChangeEmployeeStatusCommand from "./ChangeEmployeeStatusCommand";
 import { AccountStatusResponse } from "./AccountStatusResponse";
 import { IHttp } from "src/app/core/contracts/IHttp";
@@ -17,7 +17,7 @@ export default class ChangeEmployeeStatusCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: ChangeEmployeeStatusCommand
   ): Promise<AccountStatusResponse> {
     this._loadingService.setLoading(true);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import WorkGroup from "src/app/core/entities/work-groups/WorkGroup";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import GetWorkGroupsQuery from "src/app/features/workgroups/queries/get-workgroups/GetWorkGroupsQuery";
 const WorkGroups = () => {
   const [workGroups, setWorkGroups] = useState<WorkGroup[]>([]);
@@ -11,9 +11,7 @@ const WorkGroups = () => {
   }, []);
 
   const handleGetWorkGroupsAsync = async () => {
-    const response = await MediatR.features.executeAsync(
-      new GetWorkGroupsQuery()
-    );
+    const response = await App.features.executeAsync(new GetWorkGroupsQuery());
 
     setWorkGroups(response);
   };

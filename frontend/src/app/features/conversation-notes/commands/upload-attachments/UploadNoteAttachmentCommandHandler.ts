@@ -1,6 +1,6 @@
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import UploadNoteAttachmentCommand from "./UploadNoteAttachmentCommand";
 import UploadNoteAttachmentResult from "./UploadNoteAttachmentResult";
@@ -17,7 +17,7 @@ export default class UploadNoteAttachmentCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: UploadNoteAttachmentCommand
   ): Promise<UploadNoteAttachmentResult> {
     this._loadingService.setLoading(true);

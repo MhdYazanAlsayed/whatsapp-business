@@ -1,4 +1,4 @@
-import FeatureList from "src/app/core/helpers/mediatR/FeatureList";
+import FeatureList from "src/app/core/helpers/app_helpers/types/FeatureList";
 import ChangeEmployeeStatusCommand from "./commands/change-status/ChangeEmployeeStatusCommand";
 import ChangeEmployeeStatusCommandHandler from "./commands/change-status/ChangeEmployeeStatusCommandHandler";
 

@@ -153,7 +153,6 @@ app.MapHub<DefaultHub>("/chat");
 
 app.MapHub<ChatConversationHub>("/chat-conversation");
 
-
 Log.Information("Whatsapp Business is running ..");
 
 app.Run();

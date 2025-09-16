@@ -1,7 +1,7 @@
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
 import ReplyTemplate from "src/app/core/entities/reply-templates/ReplyTemplate";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import PaginationDto from "src/app/core/helpers/PaginationDto";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import GetReplyTemplatePaginationQuery from "./GetReplyTemplatePaginationQuery";
@@ -21,7 +21,7 @@ export default class GetReplyTemplatePaginationQueryHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: GetReplyTemplatePaginationQuery
   ): Promise<PaginationDto<ReplyTemplate[]>> {
     try {

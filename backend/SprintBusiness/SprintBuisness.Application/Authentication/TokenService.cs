@@ -53,25 +53,19 @@ namespace SprintBuisness.Application.Authentication
         {
             try
             {
-                // إنشاء JWT Handler
                 var jwtHandler = new JwtSecurityTokenHandler();
 
-                // تحقق مما إذا كان التوكين يمكن قراءته
                 if (!jwtHandler.CanReadToken(accessToken))
                     return null;
 
-                // قراءة التوكين
                 var jwtToken = jwtHandler.ReadJwtToken(accessToken);
 
-                // البحث عن الـ Claim المطلوب
                 var claim = jwtToken.Claims.FirstOrDefault(c => c.Type == claimType);
 
-                // إرجاع قيمة الـ Claim إذا وجد
                 return claim?.Value;
             }
             catch
             {
-                // في حال وجود خطأ أثناء التحليل
                 return null;
             }
         }

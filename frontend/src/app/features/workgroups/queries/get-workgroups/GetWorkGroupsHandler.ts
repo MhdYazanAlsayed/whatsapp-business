@@ -1,4 +1,4 @@
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import GetWorkGroupsQuery from "./GetWorkGroupsQuery";
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
@@ -16,7 +16,7 @@ export default class GetWorkGroupsHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(request: GetWorkGroupsQuery): Promise<WorkGroup[]> {
+  async handleAsync(request: GetWorkGroupsQuery): Promise<WorkGroup[]> {
     this._loadingService.setLoading(true);
 
     try {

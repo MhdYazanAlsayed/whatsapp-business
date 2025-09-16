@@ -2,7 +2,7 @@
 
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import SyncTemplatesCommand from "./SyncTemplatesCommand";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import { SimpleResultDto } from "src/app/core/helpers/TaskResults";
@@ -18,7 +18,7 @@ export default class SyncTemplatesCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(_: SyncTemplatesCommand): Promise<SimpleResultDto> {
+  async handleAsync(_: SyncTemplatesCommand): Promise<SimpleResultDto> {
     const url = "api/templates/sync";
     this._loadingService.setLoading(true);
 

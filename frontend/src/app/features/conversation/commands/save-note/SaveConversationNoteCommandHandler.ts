@@ -1,4 +1,4 @@
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import SaveConversationNoteCommand from "./SaveConversationNoteCommand";
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
@@ -16,7 +16,7 @@ export default class SaveConversationNoteCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: SaveConversationNoteCommand
   ): Promise<ConversationNote> {
     this._loadingService.setLoading(true);

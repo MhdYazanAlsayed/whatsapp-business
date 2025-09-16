@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import GetAccountStatusCommand from "src/app/features/account/queries/GetAccountStatus/GetAccountStatusCommand";
 import ChangeEmployeeStatusCommand from "src/app/features/employee/commands/change-status/ChangeEmployeeStatusCommand";
 
@@ -12,7 +12,7 @@ const AccountActiveStatus = () => {
   }, []);
 
   const handleGetAccountStatusAsync = async () => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new GetAccountStatusCommand()
     );
 
@@ -25,13 +25,13 @@ const AccountActiveStatus = () => {
       let newValue = !x;
 
       if (newValue) {
-        MediatR.features.executeAsync(
+        App.features.executeAsync(
           new ChangeEmployeeStatusCommand({
             isActive: newValue,
           })
         );
       } else {
-        MediatR.features.executeAsync(
+        App.features.executeAsync(
           new ChangeEmployeeStatusCommand({
             isActive: newValue,
           })

@@ -1,4 +1,4 @@
-import FeatureList from "src/app/core/helpers/mediatR/FeatureList";
+import FeatureList from "src/app/core/helpers/app_helpers/types/FeatureList";
 import ValidateCodeCommandHandler from "./commands/ValidateCode/ValidateCodeCommandHandler";
 import ValidateCodeCommand from "./commands/ValidateCode/ValidateCodeCommand";
 import GetAccountStatusCommand from "./queries/GetAccountStatus/GetAccountStatusCommand";

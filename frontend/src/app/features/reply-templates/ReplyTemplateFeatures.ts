@@ -1,4 +1,4 @@
-import FeatureList from "src/app/core/helpers/mediatR/FeatureList";
+import FeatureList from "src/app/core/helpers/app_helpers/types/FeatureList";
 import GetReplyTemplatePaginationQuery from "./queries/get-pagination/GetReplyTemplatePaginationQuery";
 import GetReplyTemplatePaginationQueryHandler from "./queries/get-pagination/GetReplyTemplatePaginationQueryHandler";
 import GetReplyTemplateDetailsQuery from "./queries/details/GetReplyTemplateDetailsQuery";

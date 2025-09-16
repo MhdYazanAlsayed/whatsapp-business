@@ -1,5 +1,5 @@
 import FeaturesHandler from "./FeaturesHandler";
 
-export default class MediatR {
+export default class App {
   static features = new FeaturesHandler();
 }

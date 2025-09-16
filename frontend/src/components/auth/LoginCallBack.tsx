@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import ValidateCodeCommand from "src/app/features/account/commands/ValidateCode/ValidateCodeCommand";
 import { useQuery } from "src/hooks/useQuery";
 
@@ -19,7 +19,7 @@ const LoginCallBack = () => {
       return;
     }
 
-    await MediatR.features.executeAsync(
+    await App.features.executeAsync(
       new ValidateCodeCommand({
         code: code,
       })

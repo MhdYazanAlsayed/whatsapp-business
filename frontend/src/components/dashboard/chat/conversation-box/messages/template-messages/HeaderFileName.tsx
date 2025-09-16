@@ -1,6 +1,6 @@
 import DependenciesInjector from "src/app/core/util/DependenciesInjector";
 
-const _hostEnvironment = DependenciesInjector.services.hostEnviroment;
+const _hostEnvironment = DependenciesInjector.services.hostEnvironment;
 
 export const HeaderFileName = ({ fileName }: { fileName: string }) => {
   if (

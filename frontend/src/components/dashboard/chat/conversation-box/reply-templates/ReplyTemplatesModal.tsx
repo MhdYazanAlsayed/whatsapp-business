@@ -2,7 +2,7 @@ import { FormEvent, useEffect, useState } from "react";
 import Props from "./props/Props";
 import TadawiModal from "src/components/shared/modal/TadawiModal";
 import ReplyTemplate from "src/app/core/entities/reply-templates/ReplyTemplate";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import GetReplyTemplatePaginationQuery from "src/app/features/reply-templates/queries/get-pagination/GetReplyTemplatePaginationQuery";
 import { useParams } from "react-router-dom";
 import DependenciesInjector from "src/app/core/util/DependenciesInjector";
@@ -30,7 +30,7 @@ const ReplyTemplatesModal = ({
   }, [open]);
 
   const handleGetReplyTemplatesAsync = async () => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new GetReplyTemplatePaginationQuery({
         page: pagination.currentPage,
       })

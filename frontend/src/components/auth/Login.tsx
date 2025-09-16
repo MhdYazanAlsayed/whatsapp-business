@@ -6,7 +6,7 @@ import { Navigate } from "react-router-dom";
 import { FormEvent } from "react";
 
 const _authenticator = DependenciesInjector.services.authenticator;
-const hostEnviroment = DependenciesInjector.services.hostEnviroment;
+const hostEnviroment = DependenciesInjector.services.hostEnvironment;
 
 const Login = () => {
   if (_authenticator.isAuthenticated) return <Navigate to={"/"} />;

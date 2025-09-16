@@ -1,4 +1,4 @@
-import FeatureList from "src/app/core/helpers/mediatR/FeatureList";
+import FeatureList from "src/app/core/helpers/app_helpers/types/FeatureList";
 import SendTemplateCommand from "./commands/send-template/SendTemplateCommand";
 import SendTemplateCommandHandler from "./commands/send-template/SendTemplateCommandHandler";
 import SyncTemplatesCommand from "../templates/commands/sync-temlates/SyncTemplatesCommand";

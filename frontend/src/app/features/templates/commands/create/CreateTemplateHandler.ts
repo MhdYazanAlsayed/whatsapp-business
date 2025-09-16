@@ -1,7 +1,7 @@
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
 import Template from "src/app/core/entities/templates/Template";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import CreateTemplateCommand from "./CreateTemplateCommand";
 import { ResultDto } from "src/app/core/helpers/TaskResults";
@@ -17,7 +17,7 @@ export default class CreateTemplateHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: CreateTemplateCommand
   ): Promise<ResultDto<Template>> {
     try {

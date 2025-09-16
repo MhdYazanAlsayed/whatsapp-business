@@ -2,7 +2,7 @@
 import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
 import Template from "src/app/core/entities/templates/Template";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import GetAllTemplateQuery from "./GetAllTemplatesQuery";
 
@@ -17,7 +17,7 @@ export default class GetAllTemplateQueryHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(_: GetAllTemplateQuery): Promise<Template[]> {
+  async handleAsync(_: GetAllTemplateQuery): Promise<Template[]> {
     const url = "api/templates";
     this._loadingService.setLoading(true);
 

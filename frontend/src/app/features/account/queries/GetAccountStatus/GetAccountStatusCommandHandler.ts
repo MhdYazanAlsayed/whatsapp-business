@@ -1,4 +1,4 @@
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import GetAccountStatusCommand from "./GetAccountStatusCommand";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import { IHttp } from "src/app/core/contracts/IHttp";
@@ -14,7 +14,7 @@ export default class GetAccountStatusCommandHandler
     this._httpService = httpService;
   }
 
-  async HandleAsync({}: GetAccountStatusCommand): Promise<SimpleResultDto> {
+  async handleAsync({}: GetAccountStatusCommand): Promise<SimpleResultDto> {
     const response = await this._httpService.getData(this.endpoint + "/status");
 
     if (!response.ok) {

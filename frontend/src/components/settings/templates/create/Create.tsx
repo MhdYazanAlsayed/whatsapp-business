@@ -18,7 +18,7 @@ import CreateTemplatePayload, {
 } from "src/app/features/templates/commands/create/CreateTemplatePayload";
 import SubmitButton from "./SubmitButton";
 import CreateTemplateCommand from "src/app/features/templates/commands/create/CreateTemplateCommand";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import { toast } from "react-toastify";
 
 const Create = () => {
@@ -170,7 +170,7 @@ const Create = () => {
       };
     }
 
-    const response = await MediatR.features.executeAsync(
+    const response = await App.features.executeAsync(
       new CreateTemplateCommand(requestData)
     );
 

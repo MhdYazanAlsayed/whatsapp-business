@@ -1,4 +1,4 @@
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ValidateCodeCommand from "./ValidateCodeCommand";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import { IHttp } from "src/app/core/contracts/IHttp";
@@ -23,7 +23,7 @@ export default class ValidateCodeCommandHandler
     this._localStorage = localStorageService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: ValidateCodeCommand
   ): Promise<ValidateCodeResponse> {
     const response = await this._httpService.getData(

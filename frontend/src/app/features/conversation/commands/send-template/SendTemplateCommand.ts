@@ -1,4 +1,4 @@
-import IRequest from "src/app/core/helpers/mediatR/IRequest";
+import IRequest from "src/app/core/helpers/app_helpers/IRequest";
 import { SendTemplateCommandPayload } from "./payloads/SendTemplateCommandPayload";
 import { ResultDto } from "src/app/core/helpers/ResultDto";
 import Message from "src/app/core/entities/messages/Message";

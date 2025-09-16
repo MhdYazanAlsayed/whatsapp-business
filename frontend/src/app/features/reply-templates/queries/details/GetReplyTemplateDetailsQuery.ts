@@ -1,4 +1,4 @@
-import IRequest from "src/app/core/helpers/mediatR/IRequest";
+import IRequest from "src/app/core/helpers/app_helpers/IRequest";
 import GetReplyTemplateDetailsQueryPayload from "./GetReplyTemplateDetailsQueryPayload";
 import ReplyTemplate from "src/app/core/entities/reply-templates/ReplyTemplate";
 

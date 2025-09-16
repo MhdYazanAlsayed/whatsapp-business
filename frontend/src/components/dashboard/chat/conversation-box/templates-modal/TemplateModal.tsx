@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Template from "src/app/core/entities/templates/Template";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import SyncTemplatesCommand from "src/app/features/templates/commands/sync-temlates/SyncTemplatesCommand";
 import GetTemplateDetailsQuery from "src/app/features/templates/queries/details/GetTemplateDetailsQuery";
 import GetAllTemplateQuery from "src/app/features/templates/queries/get-all/GetAllTemplatesQuery";
@@ -54,17 +54,13 @@ const TemplateModal = ({ open, setOpen, handleAddMoreMessages }: Props) => {
   }, [selected]);
 
   const handleGetTemplatesAsync = async () => {
-    const result = await MediatR.features.executeAsync(
-      new GetAllTemplateQuery()
-    );
+    const result = await App.features.executeAsync(new GetAllTemplateQuery());
 
     setTemplates(result);
   };
 
   const handleSyncTemplatesAsync = async () => {
-    const result = await MediatR.features.executeAsync(
-      new SyncTemplatesCommand()
-    );
+    const result = await App.features.executeAsync(new SyncTemplatesCommand());
 
     if (!result.succeeded) {
       toast.error(
@@ -77,7 +73,7 @@ const TemplateModal = ({ open, setOpen, handleAddMoreMessages }: Props) => {
   };
 
   const handleGetDetailsAsync = async (template: Template) => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new GetTemplateDetailsQuery({ templateId: template.id })
     );
 
@@ -96,7 +92,7 @@ const TemplateModal = ({ open, setOpen, handleAddMoreMessages }: Props) => {
     // Setup bodys parameters
     handleSetupBodyParameterRequest(components);
 
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new SendTemplateCommand({
         conversationId: { value: parseInt(id!) },
         templateId: selected!.id,
@@ -141,7 +137,7 @@ const TemplateModal = ({ open, setOpen, handleAddMoreMessages }: Props) => {
   };
 
   const handleUploadMediaAsync = async (file: File) => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new UploadTemplateMediaCommand({
         file: file,
       })

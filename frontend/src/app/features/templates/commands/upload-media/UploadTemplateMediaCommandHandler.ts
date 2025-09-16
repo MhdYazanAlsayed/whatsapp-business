@@ -1,4 +1,4 @@
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import UploadTemplateMediaCommand from "./UploadTemplateMediaCommand";
 import UploadTemplateMediaCommandResult from "./UploadTemplateMediaCommandResult";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
@@ -20,7 +20,7 @@ export default class UploadTemplateMediaCommandHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: UploadTemplateMediaCommand
   ): Promise<UploadTemplateMediaCommandResult> {
     this._loadingService.setLoading(true);

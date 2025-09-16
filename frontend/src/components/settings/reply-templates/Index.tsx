@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 import ReplyTemplate from "src/app/core/entities/reply-templates/ReplyTemplate";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import GetReplyTemplatePaginationQuery from "src/app/features/reply-templates/queries/get-pagination/GetReplyTemplatePaginationQuery";
 import ReplyItem from "./reply-item/ReplyItem";
 import Controls from "./controls/Controls";
@@ -19,7 +19,7 @@ const Index = () => {
   }, []);
 
   const handleGetReplyTemplatesAsync = async () => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new GetReplyTemplatePaginationQuery({
         page: pagination.currentPage,
       })
@@ -53,7 +53,7 @@ const Index = () => {
   };
 
   const handleUpdateAsync = async (title: string, content: string) => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new UpdateReplyTemplateCommand({
         content: content,
         title: title,
@@ -72,7 +72,7 @@ const Index = () => {
   };
 
   const handleCreateAsync = async (title: string, content: string) => {
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new CreateReplyTemplateCommand({
         content: content,
         title: title,

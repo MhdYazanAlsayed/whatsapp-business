@@ -2,7 +2,7 @@ import { IHttp } from "src/app/core/contracts/IHttp";
 import { ILoading } from "src/app/core/contracts/ILoading";
 import Template from "src/app/core/entities/templates/Template";
 import PaginationDto from "src/app/core/helpers/PaginationDto";
-import { IRequestHandler } from "src/app/core/helpers/mediatR/IRequestHandler";
+import { IRequestHandler } from "src/app/core/helpers/app_helpers/IRequestHandler";
 import ServiceProvider from "src/app/core/util/ServiceProvider";
 import GetTemplatesPaginationQuery from "./GetTemplatesPaginationQuery";
 
@@ -18,7 +18,7 @@ export default class GetTemplatesPaginationHandler
     this._loadingService = loadingService;
   }
 
-  async HandleAsync(
+  async handleAsync(
     request: GetTemplatesPaginationQuery
   ): Promise<PaginationDto<Template[]>> {
     try {

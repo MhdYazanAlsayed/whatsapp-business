@@ -5,7 +5,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { SaveConversationNoteCommandPayload } from "src/app/features/conversation/commands/save-note/SaveConversationNoteCommandPayload";
 import { useEvents } from "src/hooks/useEvents";
 import ConversationNoteAttachment from "src/app/core/entities/conversations/conversation-notes/attachments/keys/ConversationNoteAttachment";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import UploadNoteAttachmentCommand from "src/app/features/conversation-notes/commands/upload-attachments/UploadNoteAttachmentCommand";
 import SaveConversationNoteCommand from "src/app/features/conversation/commands/save-note/SaveConversationNoteCommand";
 import UploadNoteAttachmentResult from "src/app/features/conversation-notes/commands/upload-attachments/UploadNoteAttachmentResult";
@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 let attachmentsAdded: File[] = [];
 let attachmentsDeleted: ConversationNoteAttachment[] = [];
 
-const _hostEnvironment = DependenciesInjector.services.hostEnviroment;
+const _hostEnvironment = DependenciesInjector.services.hostEnvironment;
 const NotesModal = ({
   open,
   setOpen,
@@ -60,7 +60,7 @@ const NotesModal = ({
     let uploadMediaResult: UploadNoteAttachmentResult | null = null;
 
     if (attachmentsAdded.length > 0) {
-      uploadMediaResult = await MediatR.features.executeAsync(
+      uploadMediaResult = await App.features.executeAsync(
         new UploadNoteAttachmentCommand({
           files: attachmentsAdded,
         })
@@ -68,7 +68,7 @@ const NotesModal = ({
     }
 
     // Save note
-    const result = await MediatR.features.executeAsync(
+    const result = await App.features.executeAsync(
       new SaveConversationNoteCommand({
         ...formData,
         attachmentsToAdd: uploadMediaResult?.attachments ?? [],

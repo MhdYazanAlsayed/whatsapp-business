@@ -1,4 +1,4 @@
-import FeatureList from "src/app/core/helpers/mediatR/FeatureList";
+import FeatureList from "src/app/core/helpers/app_helpers/types/FeatureList";
 import GetAllTemplateQuery from "./queries/get-all/GetAllTemplatesQuery";
 import GetAllTemplateQueryHandler from "./queries/get-all/GetAllTemplateQueryHandler";
 import GetTemplateDetailsQuery from "./queries/details/GetTemplateDetailsQuery";

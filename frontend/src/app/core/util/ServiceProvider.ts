@@ -22,9 +22,10 @@ import IUser from "../contracts/IUser";
 import ApplicationUserService from "src/app/services/ApplicationUserService";
 import IConvertOption from "../contracts/IConvertOption";
 import ConvertOptionsService from "src/app/services/ConvertOptionsService";
+import IServiceProvider from "./IServiceProvider";
 
-export default class ServiceProvider {
-  public hostEnviroment: IHostEnviroment = new HostEnviroment();
+export default class ServiceProvider implements IServiceProvider {
+  public hostEnvironment: IHostEnviroment = new HostEnviroment();
   public localStorageService: ILocalStorage = new LocalStorageService();
   public languageService: ILanguage = new LanguageService(
     this.localStorageService
@@ -32,16 +33,16 @@ export default class ServiceProvider {
   public authenticator: IAuthenticator = new AutheticatorService(
     this.localStorageService
   );
-  public loggerService: ILogger = new LoggerService(this.hostEnviroment);
+  public loggerService: ILogger = new LoggerService(this.hostEnvironment);
   public loadingService: ILoading = new LoadingService();
   public httpService: IHttp = new HttpService(
     this.loggerService,
     this.languageService,
-    this.hostEnviroment
+    this.hostEnvironment
   );
 
   public singalRService: ISignal = new SignalRService(
-    this.hostEnviroment,
+    this.hostEnvironment,
     this.authenticator
   );
   public conversationSerivce: IConversation = new ConversationService(

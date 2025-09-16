@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { TemplateLanguage } from "src/app/core/entities/templates/enums/TemplateLanguage";
 import { TemplateStatus } from "src/app/core/entities/templates/enums/TemplateStatus";
 import Template from "src/app/core/entities/templates/Template";
-import MediatR from "src/app/core/helpers/mediatR/MediatR";
+import App from "src/app/core/helpers/app_helpers/App";
 import SyncTemplatesCommand from "src/app/features/templates/commands/sync-temlates/SyncTemplatesCommand";
 import GetTemplateDetailsQuery from "src/app/features/templates/queries/details/GetTemplateDetailsQuery";
 import GetAllTemplateQuery from "src/app/features/templates/queries/get-all/GetAllTemplatesQuery";
@@ -19,17 +19,13 @@ const Index = () => {
   }, []);
 
   const handleGetTemplates = async () => {
-    const result = await MediatR.features.executeAsync(
-      new GetAllTemplateQuery()
-    );
+    const result = await App.features.executeAsync(new GetAllTemplateQuery());
 
     setTemplates(result);
   };
 
   const handleSyncTemplatesAsync = async () => {
-    const result = await MediatR.features.executeAsync(
-      new SyncTemplatesCommand()
-    );
+    const result = await App.features.executeAsync(new SyncTemplatesCommand());
 
     if (result.succeeded) {
       handleGetTemplates();
@@ -37,7 +33,7 @@ const Index = () => {
   };
 
   const handleGetTemplateDetailsAsync = async (id: number) => {
-    const template = await MediatR.features.executeAsync(
+    const template = await App.features.executeAsync(
       new GetTemplateDetailsQuery({ templateId: { value: id } })
     );
 
